@@ -1,0 +1,9 @@
+TOKEN=
+WORKER_AUTH=
+
+
+# Optional notification services:
+# SC3_SENDKEY=
+# SC3_UID=
+# QMSG_KEY=
+# PUSHPLUS_KEY=

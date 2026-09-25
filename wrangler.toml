@@ -1,0 +1,13 @@
+name = "skyland-auto-sign"
+main = "src/index.ts"
+compatibility_date = "2026-07-19"
+
+[triggers]
+# Customize this Cron expression as needed before deployment.
+# Format: minute hour day-of-month month day-of-week
+# Cloudflare uses UTC. The default below is 07:00 Asia/Shanghai every day.
+# Examples:
+#   30 22 * * *  -> 06:30 Beijing time every day
+#   0 1 * * *    -> 09:00 Beijing time every day
+#   0 23 * * 1-5 -> 07:00 Beijing time on weekdays
+crons = ["0 23 * * *"]

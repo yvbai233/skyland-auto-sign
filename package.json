@@ -1,0 +1,43 @@
+{
+  "name": "skyland-auto-sign",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --test-scheduled",
+    "deploy": "wrangler deploy",
+    "check": "tsc --noEmit"
+  },
+  "cloudflare": {
+    "bindings": {
+      "TOKEN": {
+        "description": "森空岛登录 Token，用于定时签到。请从 https://web-api.skland.com/account/info/hg 获取 data.content。多个账号请使用英文逗号分隔。 / Skland login token for scheduled sign-ins. Get data.content from https://web-api.skland.com/account/info/hg. Separate multiple accounts with commas."
+      },
+      "WORKER_AUTH": {
+        "description": "手动触发接口使用的独立 Bearer 密码，请使用随机字符串，不要与森空岛 Token 相同。 / A separate random Bearer password for the manual trigger endpoint. Do not use your Skland token."
+      },
+      "SC3_SENDKEY": {
+        "description": "Optional ServerChan3 SendKey. Leave empty if unused."
+      },
+      "SC3_UID": {
+        "description": "Optional ServerChan3 UID. Usually safe to leave empty."
+      },
+      "QMSG_KEY": {
+        "description": "Optional Qmsg key. Leave empty if unused."
+      },
+      "PUSHPLUS_KEY": {
+        "description": "Optional PushPlus token. Leave empty if unused."
+      }
+    }
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "latest",
+    "@types/crypto-js": "latest",
+    "@types/pako": "latest",
+    "typescript": "latest",
+    "wrangler": "latest"
+  },
+  "dependencies": {
+    "crypto-js": "latest",
+    "pako": "latest"
+  }
+}
